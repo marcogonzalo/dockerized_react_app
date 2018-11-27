@@ -1,0 +1,23 @@
+FROM node:latest
+EXPOSE 8080
+# Set a working directory
+ENV APP_DIR /usr/src/app
+RUN mkdir -p $APP_DIR
+WORKDIR $APP_DIR
+
+# Install native dependencies
+# RUN set -ex; \
+#   apk add --no-cache ...
+
+# Install Node.js dependencies
+COPY package.json yarn.* $APP_DIR/
+RUN set -ex; \
+  if [ "$NODE_ENV" = "production" ]; then \
+    yarn install --no-cache --frozen-lockfile --production; \
+  elif [ "$NODE_ENV" = "test" ]; then \
+    yarn install --no-cache --frozen-lockfile; \
+  else \
+    yarn install; \
+  fi;
+ENTRYPOINT ["sh","entrypoint.sh"]
+COPY . $APP_DIR

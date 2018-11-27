@@ -1,0 +1,13 @@
+# Dependencies
+/node_modules
+
+# Testing folder
+/coverage
+
+# Production folder
+/build
+
+# Error logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
