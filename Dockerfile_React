@@ -10,7 +10,7 @@ WORKDIR $APP_DIR
 #   apk add --no-cache ...
 
 # Install Node.js dependencies
-COPY package.json yarn.* $APP_DIR/
+COPY package.json yarn.* webpack.* $APP_DIR/
 RUN set -ex; \
   if [ "$NODE_ENV" = "production" ]; then \
     yarn install --no-cache --frozen-lockfile --production; \
