@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack-dev-server --mode development --host 0.0.0.0 --inline --content-base .",
+    "dev": "webpack-dev-server --mode development --inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 // BUILD_DIR represents the directory path of the bundle file output
 var BUILD_DIR = path.resolve(__dirname, './dist');
@@ -5,6 +6,15 @@ var BUILD_DIR = path.resolve(__dirname, './dist');
 var APP_DIR = path.resolve(__dirname, './src');
 
 module.exports = {
+  devServer: {
+    contentBase: path.join(__dirname, '.'),
+    hot: true,
+    host: '0.0.0.0',
+    port: 8080,
+    open: true,
+    publicPath: '/',
+    //watchContentBase: true
+  },
   context: APP_DIR,
   entry: {
     javascript: './index.js',
@@ -28,6 +38,10 @@ module.exports = {
       },
     ],
   },
+  plugins:[
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  ],
   resolve: {
     modules: [
       path.join(__dirname, 'node_modules'),
