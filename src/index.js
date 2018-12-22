@@ -1,2 +1,2 @@
 "use strict";
-console.log("I'm a silly entry point");
+console.log("I'm a silly entry point...");

@@ -8,10 +8,11 @@ services:
     command: yarn dev
     image: react_front
     ports:
-     - "5000:8080"
+     - "5000:5000"
     volumes:
       - ./src:/usr/src/app/src
       - .:/usr/src/app
+      - '/usr/src/app/node_modules'
     environment:
       NODE_ENV: development
 

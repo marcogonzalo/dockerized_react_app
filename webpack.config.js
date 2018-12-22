@@ -8,21 +8,21 @@ var APP_DIR = path.resolve(__dirname, './src');
 module.exports = {
   devServer: {
     contentBase: path.join(__dirname, '.'),
+    disableHostCheck: true,
     hot: true,
     host: '0.0.0.0',
-    port: 8080,
-    open: true,
-    publicPath: '/',
+    port: 5000,
+    //open: true,
+    publicPath: '/static/',
     //watchContentBase: true
   },
-  context: APP_DIR,
   entry: {
-    javascript: './index.js',
+    javascript: APP_DIR + '/index.js',
     //html: './index.html'
   },
   output: {
     path: BUILD_DIR,
-    filename: 'index.js',
+    filename: 'bundle.js'
   },
   module: {
     rules: [

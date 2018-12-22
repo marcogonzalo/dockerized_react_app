@@ -1,8 +1,8 @@
 {
-  "name": "dockerize-react-app",
+  "name": "dockerized-react-app",
   "version": "1.0.0",
   "description": "React project basic installation",
-  "author": "@MarcoGonzalo",
+  "author": "Marco Gomez @MarcoGonzalo",
   "keywords": [],
   "main": "index.js",
   "license": "MIT",

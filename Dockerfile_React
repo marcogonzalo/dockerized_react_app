@@ -1,5 +1,5 @@
 FROM node:latest
-EXPOSE 8080
+EXPOSE 5000
 # Set a working directory
 ENV APP_DIR /usr/src/app
 RUN mkdir -p $APP_DIR
